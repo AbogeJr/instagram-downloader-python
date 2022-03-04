@@ -1,5 +1,29 @@
 {% extends "layout.html" %}
     {% block content %}
-        {{ p_urls }}
-        {{ v_urls }}
+        <div class="container text-center p-3">
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        {{ form.url.label(class="form-control-label") }}
+    
+                        {% if form.url.errors %}
+                            {{ form.url(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.url.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+    
+                        {% else %}
+                            {{ form.url(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                    <div class="form-group my-2">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+            </form>
+        </div>
+        
     {% endblock content %}

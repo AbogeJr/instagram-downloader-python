@@ -3,5 +3,5 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 class URLForm(FlaskForm):
-    url = StringField('Instagram URL', validators=[DataRequired()])
+    url = StringField('Enter Instagram URL:', validators=[DataRequired()])
     submit = SubmitField('Download')
