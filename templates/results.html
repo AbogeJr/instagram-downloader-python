@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
     {% block content %}
+        <h2 class="text-center">Results:</h2>
         <div class="container p-5 m-3">
                 <div class="m-3 p-3">
                     {% for vid in vids %}
@@ -8,7 +9,9 @@
                 </div>
                 <div class="m-3 p-3">
                     {% for pic in pics %}
-                        {{ pic }}
+                        <div class="container p-3 m-2 border">
+                            {{ pic }}
+                        </div>
                     {% endfor %}
                 </div>
         </div>
