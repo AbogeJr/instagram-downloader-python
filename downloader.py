@@ -1,5 +1,5 @@
 from urllib import response
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, send_file, url_for, flash, redirect
 import requests
 import re
 from forms import URLForm 
@@ -19,6 +19,11 @@ def get_response(url):
 
 def prepare_urls(matches):
     return list({match.replace("\\u0026","&") for match in matches})   
+
+
+def download_file():
+	path = "simple.docx"
+	return send_file(path, as_attachment=True)
 
 
 # Registration Page
